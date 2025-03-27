@@ -1,3 +1,13 @@
+body {
+  background-image: url('https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_2198/https://litrpgreads.com/wp-content/uploads/2023/11/dnd-background-5e-2023-best.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Garamond', serif;
+  color: #fff;
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +49,95 @@
 
 .read-the-docs {
   color: #888;
+}
+.player-cards-container {
+display: flex;
+flex-direction: row;
+}
+
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.player-card {
+  border: 2px solid #ec750c;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px;
+  background-color: #dea01b;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.stats p {
+  margin: 5px 0;
+}
+
+.bag {
+  margin-top: 10px;
+}
+
+.bag h4 {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #837451;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.player-img{
+  background: #837451;
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal-content {
+  background-color:grey;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 400px;
+  max-width: 80%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
