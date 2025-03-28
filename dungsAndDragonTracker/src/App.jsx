@@ -1,16 +1,23 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { getPlayers } from "./service";
 import { PlayerCard } from "./components/playerCard";
 import { useModal } from "./context/modalProvider";
+import { useSelector, useDispatch } from "react-redux";
+import { loadAllCharacters } from "../redux/characterSlice";
 
 import "./App.css";
 
 function App() {
-  const [players, setPlayers] = useState([]);
   const { openNewPlayer } = useModal();
+  const dispatch = useDispatch()
+  const players = useSelector((state) => state.characters.data)
 
   useEffect(() => {
-    getPlayers(setPlayers);
+    const fetchPlayers = async () => {
+      const players = await getPlayers()
+      dispatch(loadAllCharacters(players.data))
+    }
+    fetchPlayers()
   }, []);
 
   return (

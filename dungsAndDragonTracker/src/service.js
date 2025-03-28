@@ -3,14 +3,14 @@ import { mapPlayerData } from "./helpers/playerHelpers";
 
 const baseURL = "http://localhost:5001/api";
 
-export const getPlayers = async (callback) => {
+export const getPlayers = async () => {
   try {
     const players = await axios.get(`${baseURL}/players`);
-    callback(players.data);
-    console.log(players.data)
+    return players
   } catch (error) {
     console.error(error);
   }
+
 };
 
 export const createPlayer = async (data, callback) => {
