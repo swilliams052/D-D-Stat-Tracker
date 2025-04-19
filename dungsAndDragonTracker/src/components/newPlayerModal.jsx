@@ -21,7 +21,7 @@ export const NewPlayerModal = () => {
   const handleSubmission = () => {
     console.log(name, playerClass);
     if (name === "" || playerClass === "") return;
-    createPlayer({ name, classType: playerClass }, openConfirmation);
+    createPlayer({ name, classType: playerClass }, openConfirmation());
   };
 
   return (

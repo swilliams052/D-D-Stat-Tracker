@@ -13,7 +13,7 @@ export const getPlayers = async () => {
 
 };
 
-export const createPlayer = async (data, callback) => {
+export const createPlayer = async (data) => {
     const playerData = mapPlayerData(data.name, data.classType)
     
   try {
@@ -22,7 +22,16 @@ export const createPlayer = async (data, callback) => {
         "Content-Type": "application/json",
       },
     });
-    callback(newPlayer)
+    return newPlayer
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const deletePlayer = async (playerId) => {
+  try {
+    await axios.delete(`${baseURL}/players/${playerId}`);
+    return playerId;
   } catch (error) {
     console.error(error);
   }

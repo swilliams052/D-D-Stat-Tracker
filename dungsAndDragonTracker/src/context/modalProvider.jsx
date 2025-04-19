@@ -14,6 +14,7 @@ export const ModalProvider = (props) => {
   };
 
   const openConfirmation = () => {
+    console.log("hey")
     setIsOpen(true);
     setModalType("Confirmation");
   };
